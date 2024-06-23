@@ -1,0 +1,90 @@
+{
+  "name": "@dvcol/syno-trakt",
+  "type": "module",
+  "version": "1.0.0",
+  "title": "Syno Trakt",
+  "private": true,
+  "packageManager": "pnpm@9.4.0",
+  "description": "Simple app to manage a synology NAS with trakt.tv integration",
+  "license": "MIT",
+  "author": "dvcol",
+  "homepage": "https://github.com/dvcol/syno-trakt",
+  "bugs": "https://github.com/dvcol/syno-trakt/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dvcol/syno-trakt.git"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">= 9"
+  },
+  "main": "expo-router/entry",
+  "scripts": {
+    "prepare": "husky",
+    "start": "expo start",
+    "web": "expo start --web",
+    "ios": "expo start --ios",
+    "android": "expo start --android",
+    "test": "jest --watchAll",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:expo": "expo lint"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.0",
+    "@react-navigation/native": "^6.0.2",
+    "expo": "~51.0.14",
+    "expo-constants": "~16.0.2",
+    "expo-font": "~12.0.7",
+    "expo-linking": "~6.3.1",
+    "expo-router": "~3.5.16",
+    "expo-splash-screen": "~0.27.5",
+    "expo-status-bar": "~1.12.1",
+    "expo-system-ui": "~3.0.6",
+    "expo-web-browser": "~13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.2",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-safe-area-context": "4.10.1",
+    "react-native-screens": "3.31.1",
+    "react-native-web": "~0.19.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@dvcol/eslint-plugin-presets": "^1.3.10",
+    "@types/jest": "^29.5.12",
+    "@types/react": "~18.2.45",
+    "@types/react-test-renderer": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^8.57.0",
+    "eslint-config-expo": "^7.1.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-html": "^8.1.1",
+    "eslint-plugin-jest": "^28.6.0",
+    "eslint-plugin-markdown": "^3.0.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-yml": "^1.14.0",
+    "extract-changelog-release": "^1.0.2",
+    "husky": "^9.0.11",
+    "jest": "^29.2.1",
+    "jest-expo": "~51.0.1",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "react-test-renderer": "18.2.0",
+    "standard-version": "^9.5.0",
+    "typescript": "~5.5.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue,svelte,json,md}": [
+      "eslint --fix"
+    ]
+  }
+}
