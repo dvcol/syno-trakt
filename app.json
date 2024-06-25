@@ -26,13 +26,11 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "favicon": "./assets/images/favicon.png",
-      "experiments": {
-        "baseUrl": "/syno-trakt"
-      }
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": ["expo-router"],
     "experiments": {
+      "baseUrl": "/syno-trakt",
       "typedRoutes": true
     },
     "extra": {
