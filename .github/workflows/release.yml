@@ -1,4 +1,4 @@
-name: 📦 Release
+name: 📦 Release - Github Releases
 run-name: 📦 Release - ${{ inputs.tag-name || github.sha || github.ref }}
 
 concurrency:
@@ -75,7 +75,7 @@ jobs:
       - name: 🏷️ Generate Release changelog
         run: |
           # =================  🏷️ Changelog  =================
-          
+
           pnpm run release:changelog
 
       - name: 📦 Push Release to github
@@ -89,3 +89,7 @@ jobs:
     needs: release
     uses: ./.github/workflows/deploy.yml
     secrets: inherit
+    permissions:
+      contents: write
+      pages: write
+      id-token: write

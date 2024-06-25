@@ -26,7 +26,10 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "experiments": {
+        "baseUrl": "/syno-trakt"
+      }
     },
     "plugins": ["expo-router"],
     "experiments": {

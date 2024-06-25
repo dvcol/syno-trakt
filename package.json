@@ -44,10 +44,13 @@
     "eas:build:local": "eas build --local --output=./dist-all",
     "eas:build:ios:local": "eas build --platform ios --local --output=./dist-ios",
     "eas:build:android:local": "eas build --platform android --local --output=./dist-android",
-    "test": "jest --watchAll",
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:expo": "expo lint"
+    "lint:expo": "expo lint",
+    "release": "standard-version",
+    "release:changelog": "extract-changelog-release > RELEASE.md"
   },
   "jest": {
     "preset": "jest-expo"
