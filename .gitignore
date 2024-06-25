@@ -90,6 +90,9 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+dist-all
+dist-ios
+dist-android
 
 # Gatsby files
 .cache/
@@ -152,3 +155,7 @@ web-build/
 
 expo-env.d.ts
 # @end expo-cli
+
+# Native projects
+ios
+android
