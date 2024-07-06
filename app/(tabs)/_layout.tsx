@@ -1,38 +1,38 @@
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { Tabs } from 'expo-router';
 import React from 'react';
 
+import QueryProvider from '@/components/navigation/QueryProvider';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Routes } from '@/models/route.model';
 
-export default function TabLayout() {
+const Screens: React.ReactElement[] = Object.values(Routes).map(({ name, path }) => (
+  <Tabs.Screen
+    key={path}
+    name={path}
+    options={{
+      title: name,
+      tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />,
+    }}
+  />
+));
+
+const TabLayout: React.FC = () => {
   const colorScheme = useColorScheme();
-  const [queryClient] = React.useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryProvider>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+          tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
           headerShown: false,
         }}
       >
-        <Tabs.Screen
-          name="index"
-          options={{
-            title: 'Home',
-            tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />,
-          }}
-        />
-        <Tabs.Screen
-          name="explore"
-          options={{
-            title: 'Explore',
-            tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />,
-          }}
-        />
+        {Screens}
       </Tabs>
-    </QueryClientProvider>
+    </QueryProvider>
   );
-}
+};
+
+export default TabLayout;
